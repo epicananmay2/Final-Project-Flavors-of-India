@@ -1,0 +1,80 @@
+<!--Names: Ananmay Rajan
+    Course: Csc 337
+    Purpose: This is the menu html file and it displays the menu page of the website.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - Flavors of India</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/menu.css" />
+  <script src="./js/menu.js" defer></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav">
+        <img src="./images/logo.png" alt="" class="nav-logo" />
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/help" class="nav-link">Help</a>
+          <a href="/menu" class="nav-link active">Menu</a>
+          <% if (isAuth) { %>
+            <a href="/orderHistory" class="nav-link">Order History</a>
+            <a href="/reservation" class="nav-link">Reservation</a>
+            <%} %>
+              <a href="/faq" class="nav-link">FAQ</a>
+              <% if (!isAuth) { %>
+                <a href="/login" class="nav-link">Login</a>
+                <%} else { %>
+                  <a href="/api/logout" class="nav-link">Logout</a>
+                  <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <main class="main">
+      <h1 class="title">Menu</h1>
+      <div class="menu-layout">
+        <div id="items">
+          <!-- All the food items will rendered by Javascript here -->
+          <div class="loader-container">
+            <div class="loader"></div>
+          </div>
+        </div>
+
+        <div class="orders">
+          <h2 class="title">Order</h2>
+          <div class="order-list" id="orders">
+            <!-- All the orders will rendered by Javascript here -->
+          </div>
+
+          <!-- Order summary which includes the total amount and comments box -->
+          <div class="order-summary">
+            <textarea id="comment" placeholder="Typo your comments/suggesstions" class="order-textarea"></textarea>
+            <div class="order-total">
+              <p id="total">Total: 400</p>
+              <button id="order-btn" class="btn-primary">Place Order</button>
+            </div>
+          </div>
+        </div>
+        <!-- End of orders -->
+      </div>
+    </main>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>@2023 Flavors of India, all rights reserved ©.</p>
+    </div>
+  </div>
+</body>
+
+</html>

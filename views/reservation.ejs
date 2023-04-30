@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--Names: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+    Course: Csc 337
+    Purpose: This is the reservation html file and it displays the
+    forms for the users to enter their reservation information in. It 
+    also displays their reservations they have made.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservations - Flavors of India</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/reservation.css" />
+  <script src="./js/reservation.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav">
+        <img src="./images/logo.png" alt="" class="nav-logo" />
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/help" class="nav-link">Help</a>
+          <a href="/menu" class="nav-link">Menu</a>
+          <% if (isAuth) { %>
+            <a href="/orderHistory" class="nav-link">Order History</a>
+            <a href="/reservation" class="nav-link active">Reservation</a>
+            <%} %>
+              <a href="/faq" class="nav-link">FAQ</a>
+              <% if (!isAuth) { %>
+                <a href="/login" class="nav-link">Login</a>
+                <%} else { %>
+                  <a href="/api/logout" class="nav-link">Logout</a>
+                  <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <main class="main">
+      <h1 id="reserveTable">Make A Reservation</h1>
+      <!-- HTML form for making a reservation -->
+      <div class="content">
+        <form id="reservationForm">
+          <h2>Reservation Form</h2>
+          <div><label for="date">Date:</label></div>
+          <div><input type="date" id="date" name="date" required /></div>
+          <div>
+            <label for="time" id="timeLabel" min="11:00" max="22:00">Time:</label>
+          </div>
+          <div><input type="time" id="time" name="time" required /></div>
+          <div><label for="noOfPersons">Party Size:</label></div>
+          <div>
+            <input type="number" id="noOfPersons" name="noOfPersons" required min="2" max="10" />
+          </div>
+          <div><label for="phone">Phone:</label></div>
+          <div>
+            <input type="text" id="phone" name="phone" required />
+          </div>
+          <div class="error" style="display: none" id="error"></div>
+          <div class="success" style="display: none" id="success"></div>
+          <div>
+            <button type="submit" class="btn-primary reservation-btn large" value="Make Reservation">
+              Make Reservation
+            </button>
+          </div>
+        </form>
+
+        <div>
+          <h2>My Reservations</h2>
+          <div id="reservationsContainer">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <!-- Button for viewing all reservations -->
+          <!-- <button id="viewReservationsBtn" class="btn-primary">
+              View Reservations
+            </button> -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>@2023 Flavors of India, all rights reserved ©.</p>
+    </div>
+  </div>
+</body>
+
+</html>

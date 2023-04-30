@@ -1,0 +1,78 @@
+/*
+* Name: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+* Course: Csc 337
+* Purpose: This css file styles the reservation html file.
+*/
+
+#reserveTable {
+  text-align: center;
+  margin-top: 0;
+  font-size: 32px;
+  color: white;
+  background: url("../images/faqFood.jpg") center;
+  padding: 100px;
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+}
+
+#form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.reservation-btn {
+  width: 100%;
+}
+
+.reservation {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(200, 200, 200);
+  transition: 0.2s all ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reservation:hover {
+  transform: scale(1.02);
+}
+
+.reservation span {
+  font-weight: 500;
+}
+
+.reservation.done {
+  opacity: 0.5;
+}
+
+.reservation.upcoming {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.233);
+}
+
+.reservation.today {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.233);
+  background-color: rgba(144, 238, 144, 0.827);
+}

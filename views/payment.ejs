@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--Names: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+    Course: Csc 337
+    Purpose: This is the payment html file and it displays
+    the payment forms for the user to enter their information in and displays
+    for the pickup and delivery.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Details - Flavors of India</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/payment.css" />
+  <script src="./js/payment.js" defer></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav">
+        <img src="./images/logo.png" alt="" class="nav-logo" />
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/help" class="nav-link">Help</a>
+          <a href="/menu" class="nav-link">Menu</a>
+          <% if (isAuth) { %>
+            <a href="/orderHistory" class="nav-link">Order History</a>
+            <a href="/reservation" class="nav-link">Reservation</a>
+            <%} %>
+              <a href="/faq" class="nav-link">FAQ</a>
+              <% if (!isAuth) { %>
+                <a href="/login" class="nav-link">Login</a>
+                <%} else { %>
+                  <a href="/api/logout" class="nav-link">Logout</a>
+                  <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <main class="main">
+      <div class="content">
+        <!-- form -->
+        <form id="paymentForm" autocomplete="off">
+          <h1>Payment</h1>
+          <div>
+            <label for="credit-card-number">Credit Card Number:</label>
+            <input type="text" id="creditCardNo" name="creditCardNo" required placeholder="xxxx xxxx xxxx xxxx" />
+          </div>
+
+          <div>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="xxx" required />
+          </div>
+
+          <div>
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" id="expDate" name="expDate" placeholder="xx/xx" required />
+          </div>
+
+          <div style="margin-bottom: 16px">
+            <label>Type</label>
+            <input type="radio" name="type" id="pickup" required />
+            <label id="pickup-btn" for="pickup" class="option-label">Pickup</label>
+            <input type="radio" name="type" id="delivery" required />
+            <label id="delivery-btn" for="delivery" class="option-label">Delivery</label>
+          </div>
+
+          <div id="address" style="display: none">
+            <label for="delivery-address">Delivery Address:</label>
+            <textarea id="delivery-address" name="delivery-address" disabled required></textarea>
+          </div>
+
+          <div class="error" id="error" style="display: none"></div>
+
+          <div id="delivery-time" style="display: none">
+            <p>Your food will be delivered in 30 minutes.</p>
+          </div>
+
+          <div id="pickup-time" style="display: none">
+            <p>Your food will be ready in 15 minutes.</p>
+          </div>
+
+          <button class="btn-primary">Submit</button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="payment-success" id="paymentSuccess">
+          <img src="./images/success-tick.webp" />
+          <h3>Your Payment is Successful!</h3>
+          <p>Your food will be ready in 15 minutes.</p>
+        </div>
+
+        <!-- order details -->
+        <div>
+          <h2 style="margin: 16px 0px 8px">Order Summary</h2>
+          <div class="order-summary" id="orderSummary">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>@2023 Flavors of India, all rights reserved ©.</p>
+    </div>
+  </div>
+</body>
+
+</html>

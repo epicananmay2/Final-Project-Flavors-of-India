@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--Names: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+    Course: Csc 337
+    Purpose: This is the index html file and it acts as the home page
+    of the restaurant.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Flavors of India</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="./js/index.js" defer></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav">
+        <img src="./images/logo.png" alt="" class="nav-logo" />
+        <div class="nav-links">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/help" class="nav-link">Help</a>
+          <a href="/menu" class="nav-link">Menu</a>
+          <% if (isAuth) { %>
+            <a href="/orderHistory" class="nav-link">Order History</a>
+            <a href="/reservation" class="nav-link">Reservation</a>
+            <%} %>
+              <a href="/faq" class="nav-link">FAQ</a>
+              <% if (!isAuth) { %>
+                <a href="/login" class="nav-link">Login</a>
+                <%} else { %>
+                  <a href="/api/logout" class="nav-link">Logout</a>
+                  <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <main class="main">
+      <h1 id="welcome">Welcome to Flavors of India!</h1>
+      <section>
+        <div>
+          <img class="img" src="./images/512x512bb.jpg" />
+        </div>
+        <div>
+          <h1 id="about">About the Restaurant</h1>
+          <p id="paragraphAbout">
+            Flavors of India is a vibrant and inviting restaurant that
+            showcases the rich and diverse cuisine of India. Located in the
+            heart of the city, our restaurant offers an authentic dining
+            experience with a menu that features an array of traditional and
+            contemporary Indian dishes. With an emphasis on using fresh,
+            high-quality ingredients and a commitment to excellent service,
+            Flavors of India promises to deliver an unforgettable culinary
+            journey for all our guests. Whether you are looking for a casual
+            lunch with colleagues or a romantic dinner with your significant
+            other, our warm and welcoming atmosphere and mouth-watering dishes
+            are sure to leave you satisfied and craving for more.
+          </p>
+          <p id="paragraphAbout">
+            The owners are none other than: Ananmay Rajan, Anupama Hazarika,
+            and Jenan Meri
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <form id="contactForm" autocomplete="off">
+          <h2 id="contactAbout">Contact Us</h2>
+          <label id="nameAbout" for="name">Name:</label>
+          <input id="nameAboutText" type="text" id="name" name="name" required />
+          <label id="messageAbout" for="message">Message:</label>
+          <textarea id="messageAboutText" name="message" rows="5" required></textarea>
+          <div class="success" id="success" style="display: none"></div>
+          <button id="submitButton" class="btn-primary">Submit</button>
+        </form>
+        <div>
+          <img class="img" src="./images/twoAbout.jpg" />
+        </div>
+
+        <div>
+          <h1>Our location</h1>
+          <img class="img" src="./images/image_processing20200626-30153-1jn9tkd.gif" />
+        </div>
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d858606.7067013289!2d-112.0172822554885!3d32.79405038384832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d60c3126a84d07%3A0x2d6d268bae3a6e37!2sFlavor%20of%20India!5e0!3m2!1sen!2sus!4v1682373609315!5m2!1sen!2sus"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>@2023 Flavors of India, all rights reserved ©.</p>
+    </div>
+  </div>
+</body>
+
+</html>

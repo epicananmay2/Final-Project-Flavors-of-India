@@ -1,0 +1,81 @@
+/*
+* Name: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+* Course: Csc 337
+* Purpose: This css file styles the payment html file.
+*/
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 64px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  display: block;
+  margin-right: 16px;
+}
+
+label.option-label {
+  display: inline-block;
+  font-weight: 400;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  border: 1px solid #e4e3e3;
+  border-radius: 4px;
+}
+
+.item-qty {
+  color: gray;
+  font-size: 12px;
+}
+
+.item-price {
+  font-weight: 500;
+}
+
+.total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.total-title {
+  font-weight: 600;
+}
+
+.total-no {
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.payment-success {
+  padding: 24px;
+  text-align: center;
+  display: none;
+}
+
+.payment-success img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}

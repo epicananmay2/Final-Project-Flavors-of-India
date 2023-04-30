@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--Names: Anupama Hazarika, Ananmay Rajan, Jenan Meri
+    Course: Csc 337
+    Purpose: This is the help html file and it displays information 
+		 about each page in the website and how they work.
+-->
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Help - Flavors of India</title>
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/help.css" />
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="container">
+			<div class="nav">
+				<img src="./images/logo.png" alt="" class="nav-logo" />
+				<div class="nav-links">
+					<a href="/" class="nav-link">Home</a>
+					<a href="/help" class="nav-link active">Help</a>
+					<a href="/menu" class="nav-link">Menu</a>
+					<% if (isAuth) { %>
+						<a href="/orderHistory" class="nav-link">Order History</a>
+						<a href="/reservation" class="nav-link">Reservation</a>
+						<%} %>
+							<a href="/faq" class="nav-link">FAQ</a>
+							<% if (!isAuth) { %>
+								<a href="/login" class="nav-link">Login</a>
+								<%} else { %>
+									<a href="/api/logout" class="nav-link">Logout</a>
+									<% } %>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<main class="main">
+			<h1>Help</h1>
+			<p>This page is to help users navigate the Flavors of India website.</p>
+			<ul class="help-list">
+				<li>
+					<div class="help">The home page is where the user can see more about the restaurant and its owners.
+						At the bottom, the contact us button can be clicked on if the user wishes to contact the owners
+						about any question or concern they might have.</div>
+				</li>
+				<li>
+					<div class="help">The menu page displays all the food that are available for purchase at this
+						restaurant. Once selected for purchase, the user can use the text box on the right to make
+						suggestions such as how spicy the food they want to be. Once the order is placed, the website
+						redirects to the payment page where the user can put in information to purchase the food and
+						have it either delivered/picked up at the restaurant.</div>
+				</li>
+				<li>
+					<div class="help">The FAQ page displays frequently asked questions asked by users and clicking on
+						each question displays our corresponding answer.</div>
+				</li>
+				<li>
+					<div class="help">The reservation page can be used to make reservations and view the reservation
+						history for a user by clicking the view reservations button.</div>
+				</li>
+				<li>
+					<div class="help">The order history page is hidden if the user is not logged in to the website. Once
+						the user is logged in, the order history button can be seen on the navigation bar. The user can
+						view the history of their orders listed out in this page.</div>
+				</li>
+				<li>
+					<div class="help">The login/create account page is for a user to login or create an account. The
+						user has to input their unique email, username, and password to create an account and state that
+						they agree with the terms and conditions of the restaurant. They can view the terms and
+						conditions by clicking on the link
+						provided.</div>
+				</li>
+			</ul>
+			<div class="footer">
+				<p>@2023 Flavors of India, all rights reserved ©.</p>
+			</div>
+		</main>
+	</div>
+	<script src="./js/faq.js"></script>
+</body>
+
+</html>
